@@ -30,6 +30,17 @@ services:
         nginx['listen_port'] = 4443
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
         letsencrypt['enable'] = false
+
+        gitlab_rails['smtp_enable'] = true
+        gitlab_rails['smtp_address'] = "smtp.mailgun.org"
+        gitlab_rails['smtp_port'] = 587
+        gitlab_rails['smtp_authentication'] = "plain"
+        gitlab_rails['smtp_enable_starttls_auto'] = true
+        gitlab_rails['smtp_user_name'] = "postmaster@your_domain"
+        gitlab_rails['smtp_password'] = "your_password"
+        gitlab_rails['smtp_domain'] = "your_domain"
+        gitlab_rails['gitlab_email_from'] = "brozish@your_domain"
+        gitlab_rails['gitlab_email_reply_to'] = "brozish@your_domain"
     ports:
       - '8002:80'
       - '4443:443'
