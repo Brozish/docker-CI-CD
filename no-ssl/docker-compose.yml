@@ -6,11 +6,11 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     restart: always
     volumes:
       - /home/core/etc/nginx.conf:/etc/nginx/nginx.conf
-      - /home/core/etc/nginx.brozish.conf:/etc/nginx/conf.d/default.conf
-      - /home/core/etc/nginx.www.brozish.conf:/etc/nginx/conf.d/brozish.conf
+      - /home/core/etc/conf.d/nginx.brozish.conf:/etc/nginx/conf.d/default.conf
+      - /home/core/etc/conf.d/nginx.gitlab.conf:/etc/nginx/conf.d/nginx.gitlab.conf
       - /home/core/etc/letsencrypt:/etc/letsencrypt
