@@ -1,0 +1,5 @@
+[Unit]
+Description=Run certbot-renew.service every last day of 3rd months
+
+[Timer]
+OnCalendar=*-02,05,08,11~01 00:00:00

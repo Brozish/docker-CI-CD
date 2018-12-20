@@ -1,0 +1,6 @@
+[Unit]
+Description=Update ssl certificates
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /home/core/etc/scripts/certbot-renew.sh
