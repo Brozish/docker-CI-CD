@@ -1,0 +1,10 @@
+[Unit]
+Description=Backup Gitlab CE
+Wants=backup-gitlab.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/bash /home/core/etc/scripts/backup-gitlab.sh
+
+[Install]
+WantedBy=multi-user.target
