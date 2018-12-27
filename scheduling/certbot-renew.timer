@@ -2,8 +2,7 @@
 Description=Run certbot-renew.service every last day of 3rd months
 
 [Timer]
-Unit=certbot-renew.service
 OnCalendar=*-02,05,08,11~01 00:00:00
 
 [Install]
-WantedBy=timers.target
+WantedBy=multi-user.target

@@ -1,9 +1,9 @@
 [Unit]
 Description=Update ssl certificates
-Wants=certbot-renew.timer
 
 [Service]
 Type=oneshot
+RemainAfterExit=yes
 ExecStart=/usr/bin/bash /home/core/etc/scripts/certbot-renew.sh
 
 [Install]

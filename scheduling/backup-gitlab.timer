@@ -2,8 +2,7 @@
 Description=Run backup-gitlab.service every day
 
 [Timer]
-Unit=backup-gitlab.service
 OnCalendar=*-*-* 00:00:00
 
 [Install]
-WantedBy=timers.target
+WantedBy=multi-user.target
