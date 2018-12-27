@@ -41,6 +41,16 @@ services:
         gitlab_rails['smtp_domain'] = "your_domain"
         gitlab_rails['gitlab_email_from'] = "brozish@your_domain"
         gitlab_rails['gitlab_email_reply_to'] = "brozish@your_domain"
+
+        gitlab_rails['backup_keep_time'] = 86400
+        gitlab_rails['backup_upload_connection'] = {
+          'provider'              => 'AWS',
+          'region'                => 'ams3',
+          'aws_access_key_id'     => 'access_key',
+          'aws_secret_access_key' => 'secret_access_key',
+          'endpoint'              => 'https://ams3.digitaloceanspaces.com'
+        }
+        gitlab_rails['backup_upload_remote_directory'] = 'brozish'
     ports:
       - '8002:80'
       - '4443:443'
