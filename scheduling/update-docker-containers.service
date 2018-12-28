@@ -1,0 +1,7 @@
+[Unit]
+Description=Update docker containers
+
+[Service]
+Type=oneshot
+User=root
+ExecStart=/usr/bin/bash /home/core/etc/scripts/update-docker-containers.sh

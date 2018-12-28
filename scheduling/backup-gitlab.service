@@ -3,8 +3,5 @@ Description=Backup Gitlab CE
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
+User=root
 ExecStart=/usr/bin/bash /home/core/etc/scripts/backup-gitlab.sh
-
-[Install]
-WantedBy=multi-user.target

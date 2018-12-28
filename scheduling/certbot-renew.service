@@ -3,8 +3,5 @@ Description=Update ssl certificates
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
+User=root
 ExecStart=/usr/bin/bash /home/core/etc/scripts/certbot-renew.sh
-
-[Install]
-WantedBy=multi-user.target
