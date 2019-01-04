@@ -34,6 +34,9 @@ docker run -d --rm -it --name gitlab-runner \
 --volume /srv/gitlab-runner/config:/etc/gitlab-runner \
 gitlab/gitlab-runner:latest
 
+docker exec -ti gitlab-runner ssh-keygen -t rsa -b 4096 -C "brozish@gmail.com" -N "" -f "/root/.ssh/id_rsa"
+docker exec -ti gitlab-runner cat /root/.ssh/id_rsa.pub >> /home/core/.ssh/authorized_keys
+
 # Remove old docker images
 images=$(docker images | grep '<none>' | gawk '{ print $3 }')
 
